@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-
 <html>
+<head> 
+   <title>Enviar Mensaje</title> 
+<script>
 
-    <title>Hello World</title>
-</head>
+function Enviar_Mensaje()		
+{
+    var id_emisor = document.getElementById("id_emisor").value;
+    var id_receptor = document.getElementById("id_receptor").value;
+    var mensajes = document.getElementById("mensajes").value;
 
-<body>
-   <h1>Hello APP</h1>
-</body>
+    var lista = document.getElementById("id_emisor");
+    lista.push("id_receptor");
+    lista.push("mensajes");
+    var miJSON = JSON.encode(lista);
+}
 
+
+</script> 
+</head> 
+<body> 
+<form action="Servidor.php" method=post name="Formato_Mensaje">
+
+
+ <textarea name="mensajes" rows="5" cols="60"></textarea> 
+
+ <input type="button" id="boton1" name="boton1" onclick="Enviar_Mensaje();" value="Enviar" />
+
+
+
+</form> 
+
+
+
+
+</body> 
 </html>
